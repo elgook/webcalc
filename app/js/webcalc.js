@@ -66,6 +66,7 @@ var myCalculator = angular.module('webcalc', [])
 
       this.operandA = this.operandB;
       this.operandB = null;
+      theValBeingEntered = [];
 
     } else if (this.operandA != null && this.operandB != null) {
 
@@ -77,6 +78,7 @@ var myCalculator = angular.module('webcalc', [])
           this.displayValue = doArithmeticOperatation(this.operandA, this.operandB, this.operation);
           this.operandA = this.displayValue;
           this.operandB = null;
+          theValBeingEntered = [];
         } catch (e) {
           alert(e.message);
           this.clear();
@@ -84,7 +86,6 @@ var myCalculator = angular.module('webcalc', [])
       }
     }
     this.operation = operation;
-    theValBeingEntered = [];
     isPreviousPushEquals = false;
   }
 
